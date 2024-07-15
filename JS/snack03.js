@@ -53,7 +53,7 @@ const animals = [
         classe: 'Erinaceidi',
     }
 ]
- console.log(animals)
+console.log(animals)
 
 // Creo un array vuoto in cui pushare i mammiferi
 const mammals = []
@@ -63,10 +63,23 @@ for (let i = 0; i < animals.length; i++) {
     const currentAnimal = animals[i] // array - object
     const reproduction = currentAnimal.classe // array - object
     // console.log(currentAnimal)
+    const name = currentAnimal.nome // array - object
 
-    if (reproduction === 'Mammiferi')
+    const mammalsElement = document.getElementById('mammals')
+    const otherElement = document.getElementById('other')
+
+
+    if (reproduction === 'Mammiferi') {
 
         mammals.push(currentAnimal)
+
+        mammalsElement.innerHTML = mammalsElement.innerHTML + name + ' è un mammifero' + '<br>'
+    }
+    else {
+        otherElement.innerHTML = otherElement.innerHTML + name + ' non è un mammifero' + '<br>'
+    }
+
 }
 
 console.log(mammals)
+
